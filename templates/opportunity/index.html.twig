@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Topic</th>
                 <th>Date</th>
+                <th>Value</th>
                 <th>Status</th>
                 <th>actions</th>
             </tr>
@@ -21,6 +22,7 @@
                 <td>{{ opportunity.id }}</td>
                 <td>{{ opportunity.topic }}</td>
                 <td>{{ opportunity.date ? opportunity.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ opportunity.estimatedValue ? opportunity.estimatedValue|format_currency('EUR') }}</td>
                 <td>{{ opportunity.status.value }}</td>
                 <td>
                     <a href="{{ path('app_opportunity_show', {'id': opportunity.id}) }}">show</a>
