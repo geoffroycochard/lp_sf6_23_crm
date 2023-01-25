@@ -14,6 +14,18 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="top-bar margin-bottom-2" id="example-menu">
+            <div class="top-bar-left">
+                <ul class="vertical medium-horizontal menu" data-dropdown-menu>
+                    <li class="menu-text">@UniLP CrM</li>
+                    <li><a href="{{ path('contact_index') }}">Contact</a></li>
+                    <li><a href="{{ path('opportunity_index') }}">Opportunité</a></li>
+                    <li><a href="{{ path('product_index') }}">Produit</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="grid-container">
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>
