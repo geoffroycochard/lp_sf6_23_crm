@@ -21,7 +21,7 @@
                 <td>{{ opportunity.id }}</td>
                 <td>{{ opportunity.topic }}</td>
                 <td>{{ opportunity.date ? opportunity.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ opportunity.status }}</td>
+                <td>{{ opportunity.status.value }}</td>
                 <td>
                     <a href="{{ path('app_opportunity_show', {'id': opportunity.id}) }}">show</a>
                     <a href="{{ path('app_opportunity_edit', {'id': opportunity.id}) }}">edit</a>
