@@ -32,6 +32,9 @@ class Opportunity
     #[ORM\ManyToMany(targetEntity: Product::class, inversedBy: 'opportunities')]
     private Collection $products;
 
+    #[ORM\Column(nullable: true)]
+    private ?float $estimatedValue = null;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -110,6 +113,18 @@ class Opportunity
     public function removeProduct(Product $product): self
     {
         $this->products->removeElement($product);
+
+        return $this;
+    }
+
+    public function getEstimatedValue(): ?float
+    {
+        return $this->estimatedValue;
+    }
+
+    public function setEstimatedValue(?float $estimatedValue): self
+    {
+        $this->estimatedValue = $estimatedValue;
 
         return $this;
     }
