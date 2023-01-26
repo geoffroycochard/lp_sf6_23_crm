@@ -14,7 +14,9 @@ class OpportunityType extends AbstractType
         $builder
             ->add('topic')
             ->add('date')
-            ->add('status')
+            ->add('status', EnumType::class, [
+                'class' => OpportunityStatus::class
+            ])
         ;
     }
 
